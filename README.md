@@ -16,6 +16,7 @@ Users should be able to:
 - Search for any IP addresses or domains and see the key information and location
 
 ### Screenshot
+![Captura de pantalla 2022-10-05 a las 18 53 11](https://user-images.githubusercontent.com/76847923/194118125-591f146a-f12c-4ed2-b938-2e75789b2356.png)
 
 
 
