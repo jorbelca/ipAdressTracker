@@ -16,7 +16,7 @@
   position: relative;
 }
 .title{
-    background:url('./images/pattern-bg.png');
+    background:url('./images/pattern-bg.png') no-repeat;
     margin-top: -25px;
     min-height: 250px;
     z-index: 1;
@@ -27,26 +27,35 @@
   font-weight: 500;
 }
 .title input {
+  padding-left: 30px;
   width: 350px;
-  height: 35px;
+  height: 38px;
   border: 1px solid black;
   border-radius: 10px 0 0 10px;
   font-size: 18px;
 }
-input:focus{
-outline: none;
+.form form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-input::placeholder{
-  padding-left: 15px;
-  font-family: 'Rubik';
-  font-weight: 400;
-  font-size: 12px;
-}
-.title button{
+.form button{
+  padding-top: 10px;
   border-radius: 0px 10px 10px 0px;
   background-color: black;
   border: 1px solid black;
 }
+
+input:focus{
+  outline: none;
+}
+input::placeholder{
+
+  font-family: 'Rubik';
+  font-weight: 400;
+  font-size: 12px;
+}
+  
 .info{
   position: absolute;
   border: 1.5px solid rgb(228, 228, 228);
