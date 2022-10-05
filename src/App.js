@@ -1,15 +1,16 @@
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import './App.css';
+
 import { useEffect, useState } from 'react';
 
 
 function App() {
   const [dataApi, setDataApi] = useState('')
-  const [Ip, setIp] = useState('38.29.142.180')
+  const [Ip, setIp] = useState('')
 
   useEffect(() => {
-    fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=${process.env.REACT_APP_API_KEY}&ipAddress=${Ip}`, {
+    fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=${process.env.REACT_APP_API_KEY}&ipAddress=${Ip && '38.29.142.180'}`, {
       method: 'GET',
       mode: 'cors',
       cache: 'no-cache'
@@ -52,24 +53,41 @@ function App() {
   }, [Ip])
   function handleChange(e) {
     e.preventDefault()
-    setIp(e.target.value)
   }
   function handleSubmit(e) {
     e.preventDefault()
+    setIp(e.target.value)
   }
-  console.log(dataApi?.location?.lat);
-  console.log(dataApi?.location?.lng);
+
   return (
     <>
       <div className="App">
-        <h1>IP Adress Tracker</h1>
-        <form onSubmit={handleSubmit} >
-          <input type="text" value={Ip} onChange={handleChange} />
-          <button type="button" />
-        </form>
+        <div className="title">
+          <h1>IP Adress Tracker</h1>
+          <form onSubmit={handleSubmit} >
+            <input type="text" value={Ip}
+              placeholder='Search for any IP adress or domain' />
+            <button type="submit" >
+              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="25"><path fill="none" stroke="#FFF" strokeWidth="2" d="M2 1l6 6-6 6" /></svg>
+            </button>
+          </form>
+        </div>
+        <div className="info">
+          <div className="ip">
+            <div className="smallCont">
+              IP Adress</div>
+            {dataApi?.ip}</div>
+          <div className="location"><div className="smallCont">
+            Location</div>{dataApi?.location?.city}</div>
+          <div className="timezone"><div className="smallCont">
+            Timezone</div>{dataApi?.location?.timezone}</div>
+          <div className="isp"><div className="smallCont">
+            ISP</div>{dataApi?.isp}</div>
+        </div>
+
 
         <div id="map" >
-          {dataApi?.location?.city}
+
         </div>
       </div>
 
