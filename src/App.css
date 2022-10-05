@@ -16,7 +16,9 @@
   position: relative;
 }
 .title{
-    background:url('./images/pattern-bg.png') no-repeat;
+    background:url('./images/pattern-bg.png') ;
+    background-size: cover;
+    background-repeat: no-repeat;
     margin-top: -25px;
     min-height: 250px;
     z-index: 1;
