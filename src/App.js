@@ -75,12 +75,17 @@ function App() {
         <div className="info">
           <div className="ip">
             <div className="smallCont">
-              IP Adress</div>
+              IP Address</div>
             {dataApi?.ip}</div>
+            <div class="vl"></div>
+
           <div className="location"><div className="smallCont">
             Location</div>{dataApi?.location?.city}</div>
+            <div class="vl"></div>
+
           <div className="timezone"><div className="smallCont">
-            Timezone</div>{dataApi?.location?.timezone}</div>
+            Timezone</div>UTC {dataApi?.location?.timezone}</div>
+            <div class="vl"></div>
           <div className="isp"><div className="smallCont">
             ISP</div>{dataApi?.isp}</div>
         </div>
